@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Translation user interface</title>
+		
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-3.3.4.css">
+	
+	    <script src="bower_components/jquery/dist/jquery.js"></script>
+	
+	  	<script src="js/bootstrap-treeview.js"></script>
+		
+	
+	</head>
+	
+	<body>
+
+		<div class="container spacer" style="display:inline;" ></div>
+		
+		<div class="container spacer" >
+		
+				<form action="/chooseLang" method="get" style="display:inline;">
+						<label>Keyword :</label>
+						<input type="text" name="keyword" value="{{keyword}}"/>
+						<input type="hidden" name="groupname" value="{{groupname}}"/>
+						<input type="hidden" name="domain" value="{{domain.id}}"/>
+						<button type="submit">search</button>
+				</form>		
+				
+				<a href="/?domain={{domain.id}}"><button>cancel</button></a>
+		</div>
+
+		{{>body/pageLang}}			
+	
+		{{>div/spacer-h}}
+		
+		<div class="container">
+			<ul class="nav nav-pills">
+				<li class="">
+					<a href="#"><</a>
+				</li>
+				{{#navs}}
+				<li class="{{style}}">
+					<a href="/chooseLang?currentpage={{id}}&domain={{domain.id}}&groupname={{groupname}}&keyword={{keyword}}">{{displayId}}</a>
+				</li>
+				{{/navs}}
+				<li class="">
+					<a href="#">></a>
+				</li>
+			</ul>
+		</div>							
+			
+	</body>
+</html>

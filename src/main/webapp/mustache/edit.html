@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		
+		<meta http-equiv="Content-Type: text/html; charset=shift_jis">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+		<title>edit</title>
+		
+				<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-3.3.4.css">
+	
+			    <script src="bower_components/jquery/dist/jquery.js"></script>
+			
+			  	<script src="js/bootstrap-treeview.js"></script>
+		
+				{{>head/css}}
+		
+	</head>
+	
+	<body>
+	
+			<div class="container spacer" style="display:inline;" ></div>
+	
+			<div class="container spacer" >
+
+					<form action="/update" method="post" style="display:inline;">
+					
+						<input type="hidden" name="domain" value="{{domain.id}}">
+						<input type="hidden" name="currentpage" value="{{currentpage}}">
+						<input type="hidden" name="group" value="{{group.id}}">
+						
+						<table>
+										<tr>
+												<td>
+														id : {{equivalence.userId}}
+												</td>
+										</tr>
+										<tr>
+												<td colspan="2">
+													&nbsp;
+												</td>			
+										</tr>										
+				
+								{{#texts}}
+										<tr>
+												<td>
+														<label>{{group.userName}} :&nbsp;</label>
+												</td>
+							
+												<td>					
+														<input name="{{id}}" value="{{value}}" size="80">
+												</td>			
+										</tr>
+										
+										<tr>
+												<td colspan="2">
+													&nbsp;
+												</td>			
+										</tr>
+								{{/texts}}
+												
+						</table>
+			
+						<button type="submit">Save</button>
+						
+					</form>
+											
+					<a href="/?domain={{domain.id}}&group={{group.id}}"><button>cancel</button></a>
+					<a href="/removeEquivalence?equivalenceId={{equivalence.id}}&domain={{domain.id}}&currentpage={{currentpage}}&group={{group.id}}"><button>remove</button></a>
+
+			</div>
+	</body>
+</html>		
+						

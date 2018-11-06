@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		
+		<title>add</title>
+		
+				<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-3.3.4.css">
+	
+			    <script src="bower_components/jquery/dist/jquery.js"></script>
+			
+			  	<script src="js/bootstrap-treeview.js"></script>
+		
+				{{>head/css}}
+		
+	</head>
+	
+	<body>
+	
+			<div class="container spacer" style="display:inline;" ></div>
+	
+			<div class="container spacer" >
+
+					<form action="/save" method="post" style="display:inline;">
+					
+						<input type="hidden" name="domain" value="{{domain.id}}">
+						<input type="hidden" name="group" value="{{group.id}}">
+						<input type="hidden" name="currentpage" value="{{currentpage}}">
+						<input type="hidden" name="userId" value="{{userId}}">
+	
+						<table>
+										<tr>
+												<td>
+														id : {{userId}}
+												</td>
+										</tr>
+										<tr>
+												<td colspan="2">
+													&nbsp;
+												</td>			
+										</tr>
+								{{#groups}}
+										<tr>
+												<td>
+														<label>{{userName}} :&nbsp;</label>
+												</td>
+							
+												<td>					
+														<input name="{{name}}" size="80">		
+												</td>			
+										</tr>
+										
+										<tr>
+												<td colspan="2">
+													&nbsp;
+												</td>			
+										</tr>
+								{{/groups}}
+												
+
+			
+						</table>
+						
+						<button type="submit">Save</button>
+				
+				</form>
+				<a href="/?domain={{domain.id}}&group={{group.id}}"><button>cancel</button></a>
+				
+				
+			</div>
+	</body>
+</html>		
+						

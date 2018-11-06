@@ -1,0 +1,70 @@
+		<script type="text/javascript">
+
+			function domx(thelist)
+			{
+				  var idx = thelist.selectedIndex;
+				  var value = thelist.options[idx].value;
+				  window.location = "/?domain="+value+"&flag=1";
+			}
+		
+			function language(thelist)
+			{
+				  var idx = thelist.selectedIndex;
+				  var value = thelist.options[idx].value;
+
+				  window.location = "/?domain={{domain.id}}&currentpage={{currentpage}}&group="+value;
+			}
+			
+			function modifyDomain()
+			{
+				  var thelist=document.getElementById('domx');
+				  
+				  var idx = thelist.selectedIndex;
+				  var value = thelist.options[idx].value;
+
+				  window.location = "modifyDomain?domain="+value;
+
+			}
+
+		    function addComboItem()
+		    {
+			    	alert("add combo item");
+		    }
+
+		    function addDomain()
+		    {
+		    		window.location = "addDomain";
+		    }
+
+		    function addGroup()
+		    {
+		    		window.location = "chooseLang?domain={{domain.id}}";
+		    }
+
+		    function removeGroup()
+		    {
+					  var thelist=document.getElementById('grpx');
+					  
+					  var idx = thelist.selectedIndex;
+					  var value = thelist.options[idx].value;
+					  
+					  window.location = "removeGroup?group="+value+"&domain={{domain.id}}&currentpage={{currentpage}}";
+		    }
+		    
+		    
+		    function addText()
+		    {
+		    		window.location = "chooseLang?dest=addText";
+		    }
+
+		    function removeDomain()
+		    {
+		    		  var thelist=document.getElementById('domx');
+					  var idx = thelist.selectedIndex;
+					  var value = thelist.options[idx].value;
+					  
+					  window.location = "removeDomain?domain="+value;
+		    }
+		    			
+		    
+		</script>

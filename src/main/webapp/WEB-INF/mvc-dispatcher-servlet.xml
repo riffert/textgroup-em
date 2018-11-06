@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+        
+		<context:component-scan base-package="com.riffert.web"/>        
+		
+		<mvc:resources mapping="/favicon.ico" location="/favicon.ico" order="0"/>
+		<mvc:resources mapping="/robots.txt" location="/robots.txt" order="0"/>
+		<mvc:resources mapping="/webjars/**" location="/webjars/" order="0"/>
+		
+		<mvc:annotation-driven/>
+		<mvc:default-servlet-handler/>
+		
+		<mvc:interceptors>
+			<ref bean="mustacheMessageInterceptor"/>
+		</mvc:interceptors>
+		
+		<!-- Mustache -->
+		<bean id="mustacheViewResolver" class="org.springframework.web.servlet.view.mustache.MustacheViewResolver">
+			<property name="prefix" value="/mustache/"/>
+			<property name="suffix" value=".html"/>
+			<property name="templateFactory">
+			    <bean class="org.springframework.web.servlet.view.mustache.java.MustacheJTemplateFactory" />
+			</property>
+			<property name="requestContextAttribute" value="rc"/>
+		</bean>
+		
+		<bean id="mustacheMessageInterceptor" class="org.springframework.web.servlet.view.mustache.jmustache.LocalizationMessageInterceptor">
+			<property name="messageSource" ref="messageSource"/>
+			<property name="localeResolver" ref="localeResolver"/>
+		</bean>
+		
+		<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+			<property name="defaultLocale" value="en"/>
+		</bean> 
+	 
+
+</beans>

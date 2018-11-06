@@ -1,0 +1,164 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.riffert</groupId>
+  <artifactId>textgroup-em</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>mustache-mvc-web-start</name>
+
+  <properties>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	    
+	    <tomcat.version>7.0.90</tomcat.version>
+	
+	    <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+	    
+	    <spring.version>5.0.8.RELEASE</spring.version>
+	    <httl-springmvc.version>1.0.11</httl-springmvc.version>
+	    
+	    <mustache-java.version>0.9.5</mustache-java.version>
+	    <mustache-spring-view.version>1.4</mustache-spring-view.version>
+	    <jmustache.version>1.9</jmustache.version>
+	    
+  </properties>
+  
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+  
+	    <dependency>
+	      <groupId>org.apache.commons</groupId>
+	      <artifactId>commons-lang3</artifactId>
+	      <version>3.7</version>
+	    </dependency>  
+	    
+	    <dependency>
+	      <groupId>org.springframework</groupId>
+	      <artifactId>spring-core</artifactId>
+	      <version>${spring.version}</version>
+	    </dependency>
+	
+	    <dependency>
+	      <groupId>org.springframework</groupId>
+	      <artifactId>spring-web</artifactId>
+	      <version>${spring.version}</version>
+	    </dependency>    
+  
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>  
+  
+      	<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+    	</dependency>
+  
+	    <dependency>
+			<groupId>com.github.sps.mustache</groupId>
+			<artifactId>mustache-spring-view</artifactId>
+			<version>${mustache-spring-view.version}</version>
+	    </dependency>
+	
+	    <dependency>
+	        <groupId>com.github.spullara.mustache.java</groupId>
+	        <artifactId>compiler</artifactId>
+	        <version>${mustache-java.version}</version>
+	    </dependency>
+	
+	    <dependency>
+			<groupId>com.samskivert</groupId>
+			<artifactId>jmustache</artifactId>
+			<version>${jmustache.version}</version>
+	    </dependency>
+	    
+	    <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+	    </dependency>
+	    
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>r09</version>
+		</dependency>	   
+		
+		<!-- entity manager -->
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.3.7.Final</version>
+		</dependency>	
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+			
+		
+		<!-- page -->	
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>2.0.1.RELEASE</version>
+		</dependency>		
+		
+		
+		<!-- servlet -->
+		
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>4.0.1</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+		
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.47</version>
+		</dependency>	
+		
+
+  	</dependencies>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	  
+</project>
