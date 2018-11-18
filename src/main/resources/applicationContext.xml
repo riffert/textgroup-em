@@ -19,7 +19,7 @@
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:mysql://localhost:3306/textgroup_test3</value>
+			<value>jdbc:mysql://localhost:3306/textgroup_test1</value>
 		</property>
 		<property name="username">
 			<value>user</value>

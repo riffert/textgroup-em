@@ -207,10 +207,10 @@ public class EditController
 				
 				Long nUserId = Long.parseLong(userId);;
 				
-				if ( domain.getNextEquivalenceId() == nUserId)
-				{
+				//if ( domain.getNextEquivalenceId() == nUserId) // issue in textgroup-sd
+				//{
 					domain.incrementNextEquivalenceId();
-				}
+				//}
 				
 				equivalence.setUserId(nUserId);
 				
